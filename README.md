@@ -1,14 +1,62 @@
-# Scheduler
+# Process Scheduler Simulator
 
-This project aims to emulate the scheduling behavior of a single-core processor utilizing various scheduling algorithms, including **Highest Priority First (HPF)**, **Shortest Remaining Time Next (SRTN)**, and **Round-Robin with Customizable Quantum**. The project is designed to read input data from a file provided by the user, representing processes with information such as arrival time, priority, and burst time. Based on the selected scheduling algorithm input by the user, the simulator will schedule these processes accordingly.
+This project emulates the **scheduling behavior of a single-core processor**, implementing multiple classical CPU scheduling algorithms. It provides a hands-on simulation of how different strategies affect process execution and system performance.
+
+The scheduler reads process data from an input file containing details such as **arrival time**, **priority**, and **burst time**. Based on the user’s selected algorithm, the simulator schedules and executes processes accordingly.
+
+---
+
+## Supported Scheduling Algorithms
 
 ### Highest Priority First (HPF)
-Schedules processes based on their priority, with the highest priority process executed first.
+
+* **Description:** Executes the process with the highest priority first.
+* **Type:** Non-preemptive (can be extended to preemptive if desired).
 
 ### Shortest Remaining Time Next (SRTN)
-Selects the process with the shortest remaining burst time for execution.
 
-### Round-Robin with Customizable Quantum
-Implements a round-robin scheduling algorithm where each process is executed for a predefined quantum of time which is customizable by the user.
+* **Description:** Always selects the process with the **shortest remaining burst time** for execution.
+* **Type:** Preemptive version of the Shortest Job First (SJF) algorithm.
 
-Upon completion of the simulation, the project generates output files describing the timeline of the program and statistics. The `scheduler.log` file details the timeline of process execution, including start, stop, finish, and resumption times. The `scheduler.perf` file presents performance metrics such as CPU utilization, average turnaround time (WTA), average waiting time, and standard deviation of WTA. The `memory.log` file details the allocations and deallocations of the processes during the simulations.
+### Round-Robin (RR) with Custom Quantum
+
+* **Description:** Each process is given a fixed **time quantum** (customizable by the user).
+* After the quantum expires, the CPU switches to the next ready process.
+* **Type:** Preemptive and fair — ideal for time-sharing systems.
+
+---
+
+## Output Files
+
+After simulation, the scheduler generates detailed output files for analysis:
+
+### `scheduler.log`
+
+* Chronicles the **execution timeline** of each process, including:
+
+  * Start time
+  * Stop time
+  * Resume time
+  * Finish time
+
+### `scheduler.perf`
+
+* Summarizes **performance metrics**, including:
+
+  * CPU Utilization (%)
+  * Average Waiting Time
+  * Average Turnaround Time (WTA)
+  * Standard Deviation of WTA
+
+### `memory.log`
+
+* Tracks **memory allocation and deallocation** for each process throughout the simulation.
+
+---
+
+## Key Features
+
+* Simulates realistic CPU scheduling behavior.
+* Supports both preemptive and non-preemptive algorithms.
+* Customizable time quantum for Round-Robin.
+* Generates comprehensive performance and timeline reports.
