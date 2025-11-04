@@ -4,8 +4,6 @@ This project emulates the **scheduling behavior of a single-core processor**, im
 
 The scheduler reads process data from an input file containing details such as **arrival time**, **priority**, and **burst time**. Based on the user’s selected algorithm, the simulator schedules and executes processes accordingly.
 
----
-
 ## Supported Scheduling Algorithms
 
 ### Highest Priority First (HPF)
@@ -23,8 +21,6 @@ The scheduler reads process data from an input file containing details such as *
 * **Description:** Each process is given a fixed **time quantum** (customizable by the user).
 * After the quantum expires, the CPU switches to the next ready process.
 * **Type:** Preemptive and fair — ideal for time-sharing systems.
-
----
 
 ## Output Files
 
@@ -52,7 +48,6 @@ After simulation, the scheduler generates detailed output files for analysis:
 
 * Tracks **memory allocation and deallocation** for each process throughout the simulation.
 
----
 
 ## Key Features
 
